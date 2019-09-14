@@ -342,8 +342,32 @@ void reverse_print(List *list)
 }
 ```
 
-
-
-
-
 ### 2.3 字符串相关操作
+详见string目录下面的代码。
+
+#### 2.3.1 统计一行字符串有多少个单词
+详见string/word_in_string.c
+```c
+int word_in_string(const char *str)
+{
+    int count = 0;
+    int isWord = 0;
+    int i = 0;
+    char c = 0;
+
+    for(i = 0; (c = str[i]) != '\0'; i++)
+    {   
+        if(c == ' ')
+        {   
+            isWord = 0;
+        }   
+        else if(isWord == 0)
+        {   
+            isWord = 1;
+            count++;
+        }   
+    }   
+    
+    return count;
+}
+```
